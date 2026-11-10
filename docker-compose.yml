@@ -89,7 +89,7 @@ services:
       OFFSET_STORAGE_TOPIC: connect_offsets
       STATUS_STORAGE_TOPIC: connect_statuses
       CONNECT_CONSUMER_METADATA_MAX_AGE_MS: "10000"
-    ports: ["8083:8083"]
+    ports: ["127.0.0.1:8083:8083"]
 
   kafka-ui:
     image: provectuslabs/kafka-ui:v0.7.2
@@ -100,4 +100,4 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: connect
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://connect:8083
-    ports: ["8080:8080"]
+    ports: ["127.0.0.1:8080:8080"]
