@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'sink'@'%' IDENTIFIED BY 'sink';
+GRANT ALL PRIVILEGES ON inventory_replica.* TO 'sink'@'%';
+FLUSH PRIVILEGES;

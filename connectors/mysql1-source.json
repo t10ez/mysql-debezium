@@ -1,0 +1,15 @@
+{
+  "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+  "tasks.max": "1",
+  "database.hostname": "mysql1",
+  "database.port": "3306",
+  "database.user": "debezium",
+  "database.password": "dbz",
+  "database.server.id": "184054",
+  "topic.prefix": "mysql1",
+  "database.include.list": "inventory",
+  "table.include.list": "inventory.customers,inventory.orders",
+  "snapshot.mode": "initial",
+  "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+  "schema.history.internal.kafka.topic": "schema-history.mysql1"
+}
