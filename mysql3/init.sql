@@ -1,3 +1,0 @@
-CREATE USER IF NOT EXISTS 'sink'@'%' IDENTIFIED BY 'sink';
-GRANT ALL PRIVILEGES ON inventory_replica2.* TO 'sink'@'%';
-FLUSH PRIVILEGES;

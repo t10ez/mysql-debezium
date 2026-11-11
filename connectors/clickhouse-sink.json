@@ -1,0 +1,18 @@
+{
+  "connector.class": "com.clickhouse.kafka.connect.ClickHouseSinkConnector",
+  "tasks.max": "1",
+  "topics.regex": "mysql1\\.inventory\\.(customers|orders)",
+  "hostname": "clickhouse",
+  "port": "8123",
+  "ssl": "false",
+  "database": "inventory",
+  "username": "sink",
+  "password": "sink",
+  "transforms": "unwrap,route",
+  "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+  "transforms.unwrap.add.fields": "op,source.ts_us",
+  "transforms.unwrap.delete.tombstone.handling.mode": "rewrite",
+  "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
+  "transforms.route.regex": "mysql1\\.inventory\\.(.*)",
+  "transforms.route.replacement": "$1"
+}
